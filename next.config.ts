@@ -6,9 +6,9 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 's3.amazonaws.com',
+        hostname: 'wp.ditsolution.net',
         port: '',
-        pathname: '/my-bucket/**',
+        pathname: '/**',
         search: '',
       },
     ],
