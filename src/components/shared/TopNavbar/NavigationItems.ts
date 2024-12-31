@@ -1,10 +1,10 @@
-export interface ITopNavigationItems {
+export interface INavigationItems {
     name: string;
     path: string | "/";
-    children?: ITopNavigationItems[];
+    children?: INavigationItems[];
   }
   
-  export const TopNavigationItems: ITopNavigationItems[] = [
+  export const NavigationItems: INavigationItems[] = [
     {
       name: "Services",
       path: "/services",

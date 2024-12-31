@@ -8,7 +8,7 @@ import NavbarCallIconAnimation from "./NavbarCallIconAnimation";
 
 const Navbar = () => {
   return (
-    <div className="bg-white w-full  border-b-2 border-brand-color">
+    <div className="bg-white w-full  border-b-2 border-brand-color shadow-md">
       <ContentWidth>
         <div className="flex items-center justify-between">
           <div className="flex items-center h-20">
@@ -48,7 +48,7 @@ const Navbar = () => {
               </div>
             </Link>
             <div className="max-sm:block hidden cursor-pointer text-brand-color">
-             <SideMenuIcon/>
+              <SideMenuIcon />
             </div>
           </div>
         </div>
