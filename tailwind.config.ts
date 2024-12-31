@@ -18,6 +18,16 @@ export default {
         description: ["1rem", { lineHeight: "1.5rem", fontWeight: "400" }], // Reduced Description font size
         subtitle: ["1.5rem", { lineHeight: "2rem", fontWeight: "600" }], // Reduced Subtitle font size
       },
+
+      animation: {
+        line: 'lineAnimation 2s infinite', // Animation duration and infinite loop
+      },
+      keyframes: {
+        lineAnimation: {
+          '0%': { width: '0' },
+          '100%': { width: '100%' },
+        },
+      },
       
     },
   },
