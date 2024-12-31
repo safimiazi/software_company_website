@@ -3,7 +3,7 @@ import ContentWidth from "../ContentWidth";
 import Image from "next/image";
 import Link from "next/link";
 import TopNavigation from "./TopNavigation";
-import { BrandCallIcon, ButtonCallIcon } from "@/Icons";
+import { BrandCallIcon, ButtonCallIcon, SideMenuIcon } from "@/Icons";
 import NavbarCallIconAnimation from "./NavbarCallIconAnimation";
 
 const Navbar = () => {
@@ -26,9 +26,9 @@ const Navbar = () => {
           <div className="hidden lg:block">
             <TopNavigation />
           </div>
-          <div className="flex items-center justify-center gap-6">
-            <Link href={"/"}>
-              <button className="global-button flex items-center justify-between gap-2">
+          <div className="flex items-center justify-center gap-8">
+            <Link href={"/"} className="hidden sm:block">
+              <button className="global-button flex items-center justify-between gap-2 cursor-pointer">
                 <span>Contact Us</span>
 
                 <span>
@@ -36,7 +36,7 @@ const Navbar = () => {
                 </span>
               </button>
             </Link>
-            <Link href={"/"}>
+            <Link href={"/"} className="cursor-pointer">
               <div className="relative flex justify-center items-center">
                 <div className="absolute w-12 h-12 rounded-full bg-brand-color">
                   <NavbarCallIconAnimation />
@@ -47,6 +47,9 @@ const Navbar = () => {
                 </div>
               </div>
             </Link>
+            <div className="max-sm:block hidden cursor-pointer text-brand-color">
+             <SideMenuIcon/>
+            </div>
           </div>
         </div>
       </ContentWidth>

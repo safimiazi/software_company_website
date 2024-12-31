@@ -1,10 +1,18 @@
-import React from "react";
+"use client"
+import React, { useEffect, useState } from "react";
 import { ITopNavigationItems, TopNavigationItems } from "./TopNavigationItems";
 import Link from "next/link";
 import { NavbarArrowIcon } from "@/Icons";
+import { useRouter } from "next/navigation";
 
 const TopNavigation = () => {
-  const pathname = "";
+    const [pathname, setPathname] = useState(window.location.pathname);
+
+    useEffect(() => {
+        setPathname(window.location.pathname);
+   
+  
+    }, []);
   return (
     <div>
       <ul className="flex items-center justify-center gap-4">
