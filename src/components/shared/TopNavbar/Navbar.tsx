@@ -8,7 +8,7 @@ import NavbarCallIconAnimation from "./NavbarCallIconAnimation";
 
 const Navbar = () => {
   return (
-    <div className="bg-white w-full  border-b-2 border-brand-color shadow-md">
+    <div className="bg-white w-full  border-b-4 sticky top-0 z-50 border-brand-color shadow-md">
       <ContentWidth>
         <div className="flex items-center justify-between">
           <div className="flex items-center h-20">
@@ -27,7 +27,7 @@ const Navbar = () => {
             <TopNavigation />
           </div>
           <div className="flex items-center justify-center gap-8">
-            <Link href={"/"} className="hidden sm:block">
+            <Link href={"/about-us/contact"} className="hidden sm:block">
               <button className="global-button flex items-center justify-between gap-2 cursor-pointer">
                 <span>Contact Us</span>
 
