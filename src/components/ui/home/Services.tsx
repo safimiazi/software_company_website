@@ -1,5 +1,5 @@
 import ContentWidth from "@/components/shared/ContentWidth";
-import { PlusIcon, WebIcon } from "@/Icons";
+import { MarketingIcon, PlusIcon, WebIcon } from "@/Icons";
 import React from "react";
 
 const Services = () => {
@@ -26,7 +26,7 @@ const Services = () => {
           "We create visually appealing and highly functional mobile applications that offer seamless user experiences, helping businesses connect with their customers on mobile devices.",
       },
       {
-        icon: <WebIcon />, // Replace with actual icon
+        icon: <MarketingIcon />, // Replace with actual icon
         title: "Digital Marketing",
         description:
           "Our digital marketing services help businesses reach their target audience through effective online strategies, including SEO, social media marketing, and paid advertising, ensuring increased visibility and growth.",
@@ -65,7 +65,7 @@ const Services = () => {
         {/* Service Cards */}
         <div className="grid md:grid-cols-4 grid-cols-1 gap-5">
           {serviceSectionData.services.map((service, inx) => (
-            <div key={inx} className="bg-gray-200 rounded-sm p-8 ">
+            <div key={inx} className="bg-gray-200 rounded-sm p-8 flex flex-col">
               <div className="mb-6 text-center">
                 <div className="text-4xl text-brand-color mb-4">
                   {service.icon}
