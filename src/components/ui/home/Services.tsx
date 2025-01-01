@@ -1,7 +1,8 @@
+"use client";
 import ContentWidth from "@/components/shared/ContentWidth";
 import { MarketingIcon, PlusIcon, WebIcon } from "@/Icons";
 import React from "react";
-
+import { motion } from "motion/react";
 const Services = () => {
   const serviceSectionData = {
     heading: "Services",
@@ -65,29 +66,45 @@ const Services = () => {
         {/* Service Cards */}
         <div className="grid md:grid-cols-4 grid-cols-1 gap-5">
           {serviceSectionData.services.map((service, inx) => (
-            <div key={inx} className="bg-gray-200 rounded-sm p-8 flex flex-col">
+            <motion.div
+              whileHover={{
+                background: "#FF3C00",
+                transition: {
+                  duration: 0.3,
+                },
+              }}
+              key={inx}
+              className="bg-gray-200 rounded-sm p-8 flex flex-col group"
+            >
               <div className="mb-6 text-center">
-                <div className="text-4xl text-brand-color mb-4">
+                <div className="text-4xl text-brand-color mb-4 group-hover:text-white">
                   {service.icon}
                 </div>
               </div>
-              <h4 className="text-2xl font-semibold text-black mb-4 text-start">
+              <h4 className="text-2xl font-semibold text-black mb-4 text-start group-hover:text-white">
                 {service.title}
               </h4>
               {/* Animation */}
-              <div style={{width: "100%", height: '1px', background: "black", marginBottom: '16px' }}>
-                <div className="w-8 bg-brand-color h-full animate-line"></div>
+              <div
+                style={{
+                  width: "100%",
+                  height: "1px",
+                  background: "black",
+                  marginBottom: "16px",
+                }}
+              >
+                <div className="w-8 bg-brand-color h-full animate-line group-hover:bg-white"></div>
               </div>
-              <p className="text-base text-gray-600 leading-relaxed text-start flex-grow mb-4">
+              <p className="text-base text-gray-600 leading-relaxed text-start flex-grow mb-4 group-hover:text-white">
                 {truncateDescription(service.description)}
               </p>
-              <button className="flex items-center justify-between bg-brand-color rounded-full p-3 gap-2 text-white">
-                Learn More
-                <span className="p-1 bg-white rounded-full text-brand-color">
+              <button className="flex items-center justify-between bg-brand-color group-hover:bg-white rounded-full p-3 gap-2 text-white">
+                <span className="group-hover:text-brand-color">Learn More</span>
+                <span className="p-1 bg-white group-hover:bg-brand-color rounded-full text-brand-color group-hover:text-white">
                   <PlusIcon />
                 </span>
               </button>
-            </div>
+            </motion.div>
           ))}
         </div>
       </ContentWidth>
