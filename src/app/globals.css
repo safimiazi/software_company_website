@@ -33,6 +33,25 @@ body {
   padding : 5px 10px 5px 10px;
   border-radius: 5px;
 }
+/* home page case studies card hover effects */
+.card-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.card-background {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+   /* replace #FF5733 with your brand color */
+  transition: background 0.5s ease; /* Add transition for smooth effect */
+}
+
+.card-container:hover .card-background {
+  background: linear-gradient(to top, #FF5733, transparent);}
 
 
 
