@@ -3,6 +3,7 @@ import Achivement from "@/components/ui/home/Achivement";
 import Banner from "@/components/ui/home/Banner";
 import CaseStudies from "@/components/ui/home/CaseStudies";
 import Services from "@/components/ui/home/Services";
+import WorkProcess from "@/components/ui/home/WorkProcess";
 import Image from "next/image";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <Services/>
       <Achivement/>
       <CaseStudies/>
+      <WorkProcess/>
     </div>
   );
 }
