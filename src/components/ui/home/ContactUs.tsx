@@ -43,13 +43,15 @@ const ContactUs = () => {
             {ContactData.map((item, index) => (
               <div
                 key={index}
-                className="border rounded-lg p-6 flex items-start gap-4"
+                className="border group rounded-lg p-6 flex items-start gap-4 transition-all duration-300"
               >
-                <div className="text-subtitle p-2 border rounded-full">
-                  {item.logo}
+                <div className="text-subtitle p-2 border rounded-full bg-brand-color group-hover:bg-white">
+                  <span className="text-white group-hover:text-brand-color">
+                    {item.logo}
+                  </span>
                 </div>
                 <div>
-                  <h4 className="text-subtitle font-semibold mb-1">
+                  <h4 className="text-subtitle font-semibold mb-1 group-hover:text-brand-color">
                     {item.title}
                   </h4>
                   <p className="text-gray-600">{item.desc}</p>
