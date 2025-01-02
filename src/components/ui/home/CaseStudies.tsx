@@ -42,7 +42,7 @@ const CaseStudies = () => {
         <p className="text-brand-color text-xl font-bold tracking-wide uppercase">
           {serviceSectionData.heading}
         </p>
-        <div className="flex items-start justify-between mb-12">
+        <div className="flex items-start md:flex-row flex-col gap-3 justify-between mb-12">
           <h2 className="text-title text-white max-w-[500px] text-3xl leading-snug">
             We Serve the Best Works <br></br>
             View <span className="text-brand-color">Case Studies</span>

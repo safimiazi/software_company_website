@@ -2,6 +2,7 @@ import React from "react";
 import ContentWidth from "./ContentWidth";
 import Image from "next/image";
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from "@/Icons";
+import { Truncate } from "@/utility/CommonFunction";
 
 const Footer = () => {
   const latestBlogs = [
@@ -20,13 +21,7 @@ const Footer = () => {
     },
   ];
 
-  const truncateBlogTitle = (text: string) => {
-    const words = text.split(" ");
-    if (words.length > 7) {
-      return words.slice(0, 7).join(" ") + " ...";
-    }
-    return text;
-  };
+
 
   return (
     <div className="w-full bg-neutral-900   text-white pt-20">
@@ -111,7 +106,7 @@ const Footer = () => {
                 {/* Blog Details */}
                 <div className="flex-grow">
                   <h3 className="text-md font-medium  line-clamp-2 hover:text-brand-color transition-colors duration-300">
-                    {truncateBlogTitle(blog.title)}
+                    {Truncate(blog.title, 7)}
                   </h3>
                   <p className="text-sm text-gray-500">{blog.date}</p>
                 </div>

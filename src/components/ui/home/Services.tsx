@@ -3,6 +3,7 @@ import ContentWidth from "@/components/shared/ContentWidth";
 import { MarketingIcon, PlusIcon, WebIcon } from "@/Icons";
 import React from "react";
 import { motion } from "motion/react";
+import { Truncate } from "@/utility/CommonFunction";
 const Services = () => {
   const serviceSectionData = {
     heading: "Services",
@@ -35,13 +36,6 @@ const Services = () => {
     ],
   };
 
-  const truncateDescription = (text: string) => {
-    const words = text.split(" ");
-    if (words.length > 8) {
-      return words.slice(0, 8).join(" ") + " ...";
-    }
-    return text;
-  };
 
   return (
     <section className="py-20 bg-black">
@@ -50,7 +44,7 @@ const Services = () => {
         <p className="text-brand-color text-xl font-bold tracking-wide uppercase">
           {serviceSectionData.heading}
         </p>
-        <div className="flex items-start justify-between mb-12">
+        <div className="flex items-start md:flex-row flex-col gap-3 justify-between mb-12">
           <h2 className="text-title text-white max-w-[500px] text-3xl leading-snug">
             We Provide Any Business Problems{" "}
             <span className="text-brand-color">Services</span>
@@ -96,7 +90,7 @@ const Services = () => {
                 <div className="w-8 bg-brand-color h-full animate-line group-hover:bg-white"></div>
               </div>
               <p className="text-base text-gray-600 leading-relaxed text-start flex-grow mb-4 group-hover:text-white">
-                {truncateDescription(service.description)}
+                {Truncate(service.description, 8)}
               </p>
               <button className="flex items-center justify-between bg-brand-color group-hover:bg-white rounded-full p-3 gap-2 text-white">
                 <span className="group-hover:text-brand-color">Learn More</span>
