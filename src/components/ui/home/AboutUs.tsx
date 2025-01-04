@@ -25,7 +25,7 @@ const AboutUs = () => {
   return (
     <section className="py-20">
       <ContentWidth>
-        <div className="flex flex-col md:flex-row gap-10 items-center justify-center">
+        <div className="flex flex-col lg:flex-row gap-10 items-center justify-center">
           {/* Image */}
           <div className="flex-shrink-0 w-full md:w-[600px]">
             <Image
