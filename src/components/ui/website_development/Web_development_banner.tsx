@@ -6,8 +6,8 @@ import ContentWidth from "@/components/shared/ContentWidth";
 
 const Web_development_banner = () => {
   return (
-    <div className="relative">
-         {/* Gradient Background (Left Side to Half Width) */}
+    <div className="relative py-20">
+      {/* Gradient Background (Left Side to Half Width) */}
       <div
         className="absolute top-0 left-0 h-full w-1/2 -z-10"
         style={{
@@ -15,19 +15,17 @@ const Web_development_banner = () => {
         }}
       ></div>
       <ContentWidth>
-        <div className="flex flex-col-reverse lg:flex-row items-center   min-h-screen">
-          {/* Left Section: Text */}
-          <div className="text-center lg:text-left lg:w-1/2 space-y-6">
-            {/* Animated Heading */}
+        <div className="flex items-center md:justify-between md:flex-row flex-col-reverse justify-center gap-10">
+          <div className="flex-1 flex flex-col md:block space-y-3 max-sm:text-center">
             <motion.h1
               initial={{ x: -100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className="text-title md:text-5xl font-extrabold "
+              className="text-title  font-extrabold "
             >
               Build Your Dream <span className="text-brand-color">Website</span>
             </motion.h1>
-            {/* Animated Description */}
+
             <motion.p
               initial={{ x: -100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -38,26 +36,27 @@ const Web_development_banner = () => {
               website designs to bring your ideas to life. Fast, reliable, and
               optimized solutions are just a click away.
             </motion.p>
-            {/* Animated Button */}
-            <motion.button
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              className="flex items-center justify-between bg-brand-color rounded-full p-3 gap-2 text-white transition duration-300 ease-in-out hover:bg-brand-color-dark"
-            >
-              Get Started
-            </motion.button>
+
+            <div >
+              <motion.button
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+                className=" bg-brand-color rounded-full p-3 gap-2 text-white transition duration-300 ease-in-out hover:bg-brand-color-dark"
+              >
+                Get Started
+              </motion.button>
+            </div>
           </div>
 
-          {/* Right Section: Image */}
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="lg:w-1/2 w-full flex justify-center"
+            className=" flex-1 justify-center"
           >
             <Image
-              src={web_development_banner_image} // Replace with your image path
+              src={web_development_banner_image}
               alt="Web Development"
               className="max-w-full h-auto"
             />

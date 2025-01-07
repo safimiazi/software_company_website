@@ -1,48 +1,97 @@
-"use client"
-import { motion } from "framer-motion";
+import ContentWidth from "@/components/shared/ContentWidth";
+import Image from "next/image";
 import React from "react";
+import about from "../../../../public/about.png";
+import { CheckMark, PlusIcon } from "@/Icons";
 
 const About_web_development = () => {
-  return (
-    <section className="container mx-auto px-4 py-16 lg:flex lg:items-center lg:gap-16">
-      {/* Left Side: Text Content */}
-      <motion.div
-        className="lg:w-1/2"
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <h2 className="text-4xl font-bold text-gray-800 leading-tight">
-          About Web Development
-        </h2>
-        <p className="mt-4 text-lg text-gray-600">
-          Web development is the backbone of any successful digital presence.
-          Our team specializes in creating stunning, responsive, and
-          high-performing websites tailored to your business needs. From
-          cutting-edge technologies to seamless user experience, we deliver
-          solutions that stand out in the competitive digital landscape.
-        </p>
-        <p className="mt-4 text-lg text-gray-600">
-          Let us turn your ideas into reality and help you make a lasting
-          impact online.
-        </p>
-      </motion.div>
+  const aboutSectionData = {
+    heading: "Web Development Service",
+    image: about,
+    title: "Accelerating Your Path to Business Excellence",
+    description:
+      "At IT-Soft, we specialize in crafting innovative solutions that streamline business growth. Our approach combines collaboration with smart strategies to deliver impactful results through diverse channels and technologies.",
+    points: [
+      "Building reliable, long-lasting partnerships for success",
+      "Transforming data into actionable, value-driven insights",
+      "Driving progress through open-source collaboration",
+    ],
+    companyInfo: {
+      founderName: "Mohebulla Miazi",
+      designation: "CEO and Founder",
+    },
+  };
 
-      {/* Right Side: Image */}
-      <motion.div
-        className="lg:w-1/2 mt-8 lg:mt-0"
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="relative w-full h-64 lg:h-96">
-          <img
-            src="/about-web-development.jpg" // Replace with your actual image path
-            alt="Web Development Process"
-            className="w-full h-full object-cover rounded-lg shadow-lg"
-          />
+  return (
+    <section className="py-20">
+      <ContentWidth>
+        <div className="flex flex-col lg:flex-row gap-10 items-center justify-center">
+          {/* Image */}
+          <div className="flex-shrink-0 w-full md:w-[600px]">
+            <Image
+              src={aboutSectionData.image}
+              alt="About Us"
+              width={1000}
+              height={1000}
+              className="w-full "
+            />
+          </div>
+
+          {/* Text Content */}
+          <div className="text-center md:text-left space-y-4 md:space-y-6">
+            <p className="text-brand-color text-xl font-bold tracking-wide uppercase">
+              {aboutSectionData.heading}
+            </p>
+            <h2 className="text-title leading-snug">
+              The Fastest Way To Achieve Your Business{" "}
+              <span className="text-brand-color">Success</span>
+            </h2>
+            <p className="text-lg text-gray-600">
+              {aboutSectionData.description}
+            </p>
+
+            {/* List of Points */}
+            <ul className="space-y-2">
+              {aboutSectionData.points?.map((point, inx) => (
+                <li
+                  key={inx}
+                  className="flex items-center gap-4 text-gray-700 text-lg"
+                >
+                  <div className="p-1 rounded-full bg-brand-color">
+                    <CheckMark className="text-white w-3 h-3" />
+                  </div>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="flex flex-col md:flex-row items-center justify-start gap-10">
+              <button className="flex items-center justify-between bg-brand-color rounded-full p-3 gap-2 text-white">
+                Contact Now
+                <span className="p-1 bg-white rounded-full text-brand-color">
+                  <PlusIcon />
+                </span>
+              </button>
+              <div className="flex items-center justify-start gap-4">
+                <Image
+                  src={aboutSectionData.image}
+                  alt="Founder"
+                  width={56}
+                  height={56}
+                  className="w-14 h-14 border-2 border-brand-color rounded-full object-cover"
+                />
+                <div className="flex flex-col">
+                  <div className="text-xl font-semibold text-gray-800">
+                    {aboutSectionData.companyInfo.founderName}
+                  </div>
+                  <div className="text-sm text-gray-600">
+                    {aboutSectionData.companyInfo.designation}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </motion.div>
+      </ContentWidth>
     </section>
   );
 };
