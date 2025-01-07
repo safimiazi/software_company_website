@@ -11,11 +11,7 @@ const About_web_development = () => {
     title: "Accelerating Your Path to Business Excellence",
     description:
       "At IT-Soft, we specialize in crafting innovative solutions that streamline business growth. Our approach combines collaboration with smart strategies to deliver impactful results through diverse channels and technologies.",
-    points: [
-      "Building reliable, long-lasting partnerships for success",
-      "Transforming data into actionable, value-driven insights",
-      "Driving progress through open-source collaboration",
-    ],
+
     companyInfo: {
       founderName: "Mohebulla Miazi",
       designation: "CEO and Founder",
@@ -50,20 +46,7 @@ const About_web_development = () => {
               {aboutSectionData.description}
             </p>
 
-            {/* List of Points */}
-            <ul className="space-y-2">
-              {aboutSectionData.points?.map((point, inx) => (
-                <li
-                  key={inx}
-                  className="flex items-center gap-4 text-gray-700 text-lg"
-                >
-                  <div className="p-1 rounded-full bg-brand-color">
-                    <CheckMark className="text-white w-3 h-3" />
-                  </div>
-                  <span>{point}</span>
-                </li>
-              ))}
-            </ul>
+      
             <div className="flex flex-col md:flex-row items-center justify-start gap-10">
               <button className="flex items-center justify-between bg-brand-color rounded-full p-3 gap-2 text-white">
                 Contact Now
