@@ -69,7 +69,7 @@ const Benefits_web_development = () => {
                 key={inx}
                 className="relative overflow-hidden   p-6 space-y-5  rounded-md border group hover:border-brand-color transition-all duration-300"
               >
-                <div className="text-2xl group-hover:text-3xl  relative transition-all duration-500  p-2 rounded-full border w-fit  z-10 group-hover:text-white">
+                <div className="text-2xl  relative transition-all duration-500  p-2 rounded-full border w-fit  z-10 group-hover:text-white">
                   <PhoneIcon />
                 </div>
                 <h5 className="text-xl  relative transition-all duration-500  z-10 group-hover:text-white">
