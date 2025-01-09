@@ -1,4 +1,5 @@
 import React from "react";
+import Title from "./Title";
 
 const Why_choose_us = () => {
   const data = {
@@ -27,7 +28,11 @@ const Why_choose_us = () => {
     ],
   };
 
-  return <div></div>;
+  return (
+    <div>
+      <Title title={data.sectionTitle} description={data.sectionDescription} />
+    </div>
+  );
 };
 
 export default Why_choose_us;
