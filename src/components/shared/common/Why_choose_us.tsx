@@ -33,21 +33,31 @@ const Why_choose_us = () => {
   return (
     <div className="py-20">
       <ContentWidth>
-        <div className="space-y-4">
+        <div className="space-y-10">
           <Title
             title={data.sectionTitle}
             description={data.sectionDescription}
           />
           {/* cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {data.sectionData?.map((item, inx) => (
-              <div className="p-6 rounded-md border hover:border-brand-color transition-all duration-500 space-y-2">
-                <div className="p-2 rounded-full">
-                  <PlusIcon />
-                </div>
-                <h4>{item.title}</h4>
-                <p>{item.description}</p>
-              </div>
+             <div
+             key={inx}
+             className="relative p-6 rounded-md border hover:border-brand-color transition-all duration-500 space-y-2 overflow-hidden group"
+           >
+             {/* Background animation */}
+             <div className="absolute inset-0 bg-gradient-to-r from-[#FF5733] to-transparent transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out"></div>
+             
+             {/* Content */}
+             <div className="relative z-10 flex items-center justify-start">
+               <div className="p-2 rounded-full border bg-white">
+                 <PlusIcon />
+               </div>
+             </div>
+             <h4 className="relative z-10 text-xl">{item.title}</h4>
+             <p className="relative z-10">{item.description}</p>
+           </div>
+           
             ))}
           </div>
         </div>
