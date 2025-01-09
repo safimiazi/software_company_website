@@ -1,5 +1,6 @@
 import React from "react";
 import Title from "./Title";
+import ContentWidth from "../ContentWidth";
 
 const Why_choose_us = () => {
   const data = {
@@ -29,8 +30,13 @@ const Why_choose_us = () => {
   };
 
   return (
-    <div>
-      <Title title={data.sectionTitle} description={data.sectionDescription} />
+    <div className="py-20">
+      <ContentWidth>
+        <Title
+          title={data.sectionTitle}
+          description={data.sectionDescription}
+        />
+      </ContentWidth>
     </div>
   );
 };
