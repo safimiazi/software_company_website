@@ -54,7 +54,7 @@ const Why_choose_us = () => {
                  <PlusIcon />
                </div>
              </div>
-             <h4 className="relative z-10 text-xl">{item.title}</h4>
+             <h4 className="relative z-10 text-xl font-bold">{item.title}</h4>
              <p className="relative z-10">{item.description}</p>
            </div>
            
