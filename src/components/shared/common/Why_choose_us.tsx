@@ -1,6 +1,7 @@
 import React from "react";
 import Title from "./Title";
 import ContentWidth from "../ContentWidth";
+import { PlusIcon } from "@/Icons";
 
 const Why_choose_us = () => {
   const data = {
@@ -32,10 +33,24 @@ const Why_choose_us = () => {
   return (
     <div className="py-20">
       <ContentWidth>
-        <Title
-          title={data.sectionTitle}
-          description={data.sectionDescription}
-        />
+        <div className="space-y-4">
+          <Title
+            title={data.sectionTitle}
+            description={data.sectionDescription}
+          />
+          {/* cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {data.sectionData?.map((item, inx) => (
+              <div className="p-6 rounded-md border hover:border-brand-color transition-all duration-500 space-y-2">
+                <div className="p-2 rounded-full">
+                  <PlusIcon />
+                </div>
+                <h4>{item.title}</h4>
+                <p>{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </ContentWidth>
     </div>
   );
