@@ -3,7 +3,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import ContentWidth from "@/components/shared/ContentWidth";
@@ -53,9 +53,14 @@ const Client_Testimonials = () => {
           {/* Swiper Slider */}
           <Swiper
             spaceBetween={30}
-            slidesPerView={1}
-            pagination={{ clickable: true }}
-            modules={[Pagination]}
+            slidesPerView={2}
+            autoplay={{
+              delay: 3000,
+            
+            }}
+            speed={1000}
+            pagination={{ clickable: true}}
+            modules={[Pagination, Autoplay]}
             className="testimonial-slider"
           >
             {testimonialData.testimonials.map((testimonial, index) => (

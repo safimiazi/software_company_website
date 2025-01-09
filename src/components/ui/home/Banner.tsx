@@ -88,6 +88,7 @@ export default function App() {
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
         autoplay={{ delay: 9000 }}
+       
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
