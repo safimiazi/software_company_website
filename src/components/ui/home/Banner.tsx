@@ -100,10 +100,10 @@ export default function App() {
                 width={1000}
                 height={1000}
               />
-              <div className="absolute inset-0 bg-red-950 bg-opacity-40"></div>
+              <div className="absolute inset-0 bg-black bg-opacity-40"></div>
               <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-4 text-center">
                 <h2 className="text-4xl font-bold mb-4">{slide.title}</h2>
-                <p className="text-lg mb-6">{slide.description}</p>
+                <p className="text-lg max-w-[500px] mb-6">{slide.description}</p>
                 <Link
                   href={slide.button.link}
                   className="bg-brand-color  px-6 py-3 rounded text-white font-medium"
