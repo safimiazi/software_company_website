@@ -7,7 +7,6 @@ import ContactUs from "@/components/ui/home/ContactUs";
 import Projects from "@/components/ui/home/Projects";
 import Services from "@/components/ui/home/Services";
 import WorkProcess from "@/components/ui/home/WorkProcess";
-import Image from "next/image";
 
 export default function Home() {
   return (
