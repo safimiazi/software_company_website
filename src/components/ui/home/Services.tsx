@@ -36,7 +36,6 @@ const Services = () => {
     ],
   };
 
-
   return (
     <section className="py-20 bg-black">
       <ContentWidth>
@@ -64,18 +63,18 @@ const Services = () => {
               whileHover={{
                 background: "#FF3C00",
                 transition: {
-                  duration: 0.3,
+                  duration: 0.1, // 500ms duration
                 },
               }}
               key={inx}
-              className="bg-gray-200 rounded-sm p-8 flex flex-col group"
+              className="bg-white rounded-sm p-8 flex flex-col group transition-all duration-500"
             >
               <div className="mb-6 text-center">
-                <div className="text-4xl text-brand-color mb-4 group-hover:text-white">
+                <div className="text-4xl text-brand-color mb-4 group-hover:text-white transition-all duration-500">
                   {service.icon}
                 </div>
               </div>
-              <h4 className="text-2xl font-semibold text-black mb-4 text-start group-hover:text-white">
+              <h4 className="text-2xl font-semibold text-black mb-4 text-start group-hover:text-white transition-all duration-500">
                 {service.title}
               </h4>
               {/* Animation */}
@@ -87,14 +86,16 @@ const Services = () => {
                   marginBottom: "16px",
                 }}
               >
-                <div className="w-8 bg-brand-color h-full animate-line group-hover:bg-white"></div>
+                <div className="w-8 bg-brand-color h-full animate-line group-hover:bg-white transition-all duration-500"></div>
               </div>
-              <p className="text-base text-gray-600 leading-relaxed text-start flex-grow mb-4 group-hover:text-white">
+              <p className="text-base text-gray-600 leading-relaxed text-start flex-grow mb-4 group-hover:text-white transition-all duration-500">
                 {Truncate(service.description, 8)}
               </p>
-              <button className="flex items-center justify-between bg-brand-color group-hover:bg-white rounded-full p-3 gap-2 text-white">
-                <span className="group-hover:text-brand-color">Learn More</span>
-                <span className="p-1 bg-white group-hover:bg-brand-color rounded-full text-brand-color group-hover:text-white">
+              <button className="flex items-center justify-between bg-brand-color group-hover:bg-white rounded-full p-3 gap-2 text-white transition-all duration-500">
+                <span className="group-hover:text-brand-color transition-all duration-500">
+                  Learn More
+                </span>
+                <span className="p-1 bg-white group-hover:bg-brand-color rounded-full text-brand-color group-hover:text-white transition-all duration-500">
                   <PlusIcon />
                 </span>
               </button>
