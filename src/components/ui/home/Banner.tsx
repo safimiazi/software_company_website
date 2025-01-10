@@ -85,10 +85,28 @@ export default function App() {
         slidesPerView={1}
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         navigation
-        pagination={{ clickable: true }}
+        pagination={{
+          clickable: true,
+          renderBullet: (index, className) => {
+            const imageUrl = slides[index].image;
+            return `
+              <span
+                class="${className} custom-pagination"
+                style="
+                  width: 50px;
+                  height: 50px;
+                  background-image: url('${imageUrl}');
+                  background-size: cover;
+                  background-position: center;
+                  display: inline-block;
+                  border-radius: 5%;
+                "
+              ></span>
+            `;
+          },
+        }}
         scrollbar={{ draggable: true }}
         autoplay={{ delay: 9000 }}
-       
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
@@ -103,7 +121,9 @@ export default function App() {
               <div className="absolute inset-0 bg-black bg-opacity-40"></div>
               <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-4 text-center">
                 <h2 className="text-4xl font-bold mb-4">{slide.title}</h2>
-                <p className="text-lg max-w-[500px] mb-6">{slide.description}</p>
+                <p className="text-lg max-w-[600px] mb-6">
+                  {slide.description}
+                </p>
                 <Link
                   href={slide.button.link}
                   className="bg-brand-color  px-6 py-3 rounded text-white font-medium"
