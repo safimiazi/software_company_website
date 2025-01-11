@@ -1,8 +1,10 @@
+import ContentWidth from "@/components/shared/ContentWidth";
 import React from "react";
 
 const Company_overview_about: React.FC = () => {
   return (
-    <div className="py-16 px-6 md:px-12 lg:px-20 bg-gray-100">
+    <div className="py-20 ">
+      <ContentWidth>
       <div className="flex flex-col lg:flex-row items-center lg:items-start lg:space-x-8">
         {/* Left: Image Section */}
         <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
@@ -31,6 +33,7 @@ const Company_overview_about: React.FC = () => {
           </p>
         </div>
       </div>
+      </ContentWidth>
     </div>
   );
 };
