@@ -1,9 +1,10 @@
+import Company_overview_banner from '@/components/ui/company_overview/Company_overview_banner';
 import React from 'react';
 
 const CompanyOverview = () => {
     return (
         <div>
-            company-overview
+            <Company_overview_banner/>
         </div>
     );
 };
