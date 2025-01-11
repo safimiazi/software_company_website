@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import web_development_banner_image from "../../../../public/about.png";
 import Image from "next/image";
 import ContentWidth from "@/components/shared/ContentWidth";
+import { PlusIcon } from "@/Icons";
 
 const Web_development_banner = () => {
   return (
@@ -21,7 +22,7 @@ const Web_development_banner = () => {
               initial={{ x: -100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className="text-title  font-extrabold "
+              className="text-4xl  font-extrabold "
             >
               Build Your Dream <span className="text-brand-color">Website</span>
             </motion.h1>
@@ -37,14 +38,17 @@ const Web_development_banner = () => {
               optimized solutions are just a click away.
             </motion.p>
 
-            <div >
+            <div className="flex justify-center md:justify-start">
               <motion.button
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
-                className=" bg-brand-color rounded-full p-3 gap-2 text-white transition duration-300 ease-in-out hover:bg-brand-color-dark"
+                className="flex items-center justify-between bg-brand-color rounded-full transition duration-300 ease-in-out p-3 gap-2 text-white"
               >
                 Get Started
+                <span className="p-1 bg-white rounded-full text-brand-color">
+                  <PlusIcon />
+                </span>
               </motion.button>
             </div>
           </div>

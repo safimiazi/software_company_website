@@ -1,9 +1,8 @@
 "use client";
-import React, { useRef, useState } from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { motion } from "framer-motion"; // Import Framer Motion
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -17,8 +16,7 @@ import {
   Scrollbar,
 } from "swiper/modules";
 import Link from "next/link";
-
-// import required modules
+import { PlusIcon } from "@/Icons";
 
 export default function App() {
   const slides = [
@@ -79,62 +77,75 @@ export default function App() {
     },
   ];
 
+  const animationVariants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+    exit: { opacity: 0, x: 100, transition: { duration: 0.5 } },
+  };
+
   return (
-    <>
-      <Swiper
-        slidesPerView={1}
-        modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-        navigation
-        pagination={{
-          clickable: true,
-          renderBullet: (index, className) => {
-            const imageUrl = slides[index].image;
-            return `
-              <span
-                class="${className} custom-pagination"
-                style="
-                  width: 50px;
-                  height: 50px;
-                  background-image: url('${imageUrl}');
-                  background-size: cover;
-                  background-position: center;
-                  display: inline-block;
-                  border-radius: 5%;
-                "
-              ></span>
-            `;
-          },
-        }}
-        scrollbar={{ draggable: true }}
-        autoplay={{ delay: 9000 }}
-      >
-        {slides.map((slide, index) => (
-          <SwiperSlide key={index}>
-            <div className="relative w-full h-[625px]">
-              <Image
-                src={slide.image}
-                alt={slide.title}
-                className="h-full w-full object-cover"
-                width={1000}
-                height={1000}
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-4 text-center">
-                <h2 className="text-4xl font-bold mb-4">{slide.title}</h2>
-                <p className="text-lg max-w-[600px] mb-6">
-                  {slide.description}
-                </p>
-                <Link
-                  href={slide.button.link}
-                  className="bg-brand-color  px-6 py-3 rounded text-white font-medium"
-                >
+    <Swiper
+      slidesPerView={1}
+      modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+      pagination={{
+        clickable: true,
+        renderBullet: (index, className) => {
+          const imageUrl = slides[index].image;
+          return `
+            <span
+              class="${className} custom-pagination"
+              style="
+                width: 50px;
+                height: 50px;
+                background-image: url('${imageUrl}');
+                background-size: cover;
+                background-position: center;
+                display: inline-block;
+                border-radius: 5%;
+              "
+            ></span>
+          `;
+        },
+      }}
+      scrollbar={{ draggable: true }}
+      autoplay={{ delay: 9000 }}
+    >
+      {slides.map((slide, index) => (
+        <SwiperSlide key={index}>
+          <div className="relative w-full h-[625px]">
+            <Image
+              src={slide.image}
+              alt={slide.title}
+              className="h-full w-full object-cover"
+              width={1000}
+              height={1000}
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-4 text-center">
+              <motion.div
+                variants={animationVariants}
+                className="text-4xl font-bold mb-4"
+              >
+                {slide.title}
+              </motion.div>
+              <motion.div
+                variants={animationVariants}
+                className="text-lg max-w-[600px] mb-6"
+              >
+                {slide.description}
+              </motion.div>
+              <Link href={slide.button.link}>
+                <button className="flex items-center justify-between bg-brand-color rounded-full p-3 gap-2 text-white transition duration-300 ease-in-out hover:bg-brand-color-dark">
                   {slide.button.text}
-                </Link>
-              </div>
+                  <span className="p-1 bg-white rounded-full text-brand-color">
+                    <PlusIcon />
+                  </span>
+                </button>
+              </Link>
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </>
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 }

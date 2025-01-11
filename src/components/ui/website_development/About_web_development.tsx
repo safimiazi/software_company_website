@@ -1,8 +1,11 @@
+"use client";
+
 import ContentWidth from "@/components/shared/ContentWidth";
 import Image from "next/image";
 import React from "react";
 import about from "../../../../public/about.png";
 import { CheckMark, PlusIcon } from "@/Icons";
+import { motion } from "framer-motion";
 
 const About_web_development = () => {
   const aboutSectionData = {
@@ -18,23 +21,47 @@ const About_web_development = () => {
     },
   };
 
+  const fadeInVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <section className="py-20">
       <ContentWidth>
-        <div className="flex flex-col lg:flex-row gap-10 items-center justify-center">
+        <motion.div
+          className="flex flex-col lg:flex-row gap-10 items-center justify-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8 }}
+          variants={fadeInVariants}
+        >
           {/* Image */}
-          <div className="flex-shrink-0 w-full md:w-[600px]">
+          <motion.div
+            className="flex-shrink-0 w-full md:w-[600px]"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
             <Image
               src={aboutSectionData.image}
               alt="About Us"
               width={1000}
               height={1000}
-              className="w-full "
+              className="w-full"
             />
-          </div>
+          </motion.div>
 
           {/* Text Content */}
-          <div className="text-center md:text-left space-y-4 md:space-y-6">
+          <motion.div
+            className="text-center md:text-left space-y-4 md:space-y-6"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            variants={fadeInVariants}
+          >
             <p className="text-brand-color text-xl font-bold tracking-wide uppercase">
               {aboutSectionData.heading}
             </p>
@@ -46,14 +73,17 @@ const About_web_development = () => {
               {aboutSectionData.description}
             </p>
 
-      
             <div className="flex flex-col md:flex-row items-center justify-start gap-10">
-              <button className="flex items-center justify-between bg-brand-color rounded-full p-3 gap-2 text-white">
+              <motion.button
+                className="flex items-center justify-between bg-brand-color rounded-full p-3 gap-2 text-white"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 Contact Now
                 <span className="p-1 bg-white rounded-full text-brand-color">
                   <PlusIcon />
                 </span>
-              </button>
+              </motion.button>
               <div className="flex items-center justify-start gap-4">
                 <Image
                   src={aboutSectionData.image}
@@ -63,21 +93,32 @@ const About_web_development = () => {
                   className="w-14 h-14 border-2 border-brand-color rounded-full object-cover"
                 />
                 <div className="flex flex-col">
-                  <div className="text-xl font-semibold text-gray-800">
+                  <motion.div
+                    className="text-xl font-semibold text-gray-800"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ delay: 0.5 }}
+                  >
                     {aboutSectionData.companyInfo.founderName}
-                  </div>
-                  <div className="text-sm text-gray-600">
+                  </motion.div>
+                  <motion.div
+                    className="text-sm text-gray-600"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ delay: 0.6 }}
+                  >
                     {aboutSectionData.companyInfo.designation}
-                  </div>
+                  </motion.div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </ContentWidth>
     </section>
   );
 };
 
 export default About_web_development;
-
