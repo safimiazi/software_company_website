@@ -3,6 +3,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
+import Title from "./Title";
 
 interface Technology {
   id: number;
@@ -25,8 +26,7 @@ const TechnologiesWeUse: React.FC<TechnologiesWeUseProps> = ({
     <div className="py-16">
       <div className="max-w-7xl mx-auto px-6 space-y-6">
         <div className="text-center space-y-3">
-          <h2 className="text-3xl font-bold">{title}</h2>
-          <p className="text-gray-600">{description}</p>
+          <Title title={title} description={description}/>
         </div>
         {/* Swiper Section */}
         <Swiper
@@ -43,7 +43,7 @@ const TechnologiesWeUse: React.FC<TechnologiesWeUseProps> = ({
           speed={3000}
           className="mySwiper"
         >
-          {technologies.map((tech) => (
+          {technologies?.map((tech) => (
             <SwiperSlide key={tech.id} className="flex justify-center">
               <div className="p-4 rounded-lg border border-gray-200 flex items-center gap-4 shadow-sm text-center hover:shadow-lg transition-all duration-300">
                 {tech.icon && (
