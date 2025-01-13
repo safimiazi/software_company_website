@@ -78,10 +78,7 @@ export interface INavigationItems {
     {
       name: "Blog",
       path: "/blog",
-    },
-    {
-      name: "Support",
-      path: "/support",
-    },
+    }
+ 
   ];
   
