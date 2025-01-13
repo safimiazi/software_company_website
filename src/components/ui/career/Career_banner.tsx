@@ -1,6 +1,5 @@
 import PageBanner from "@/components/shared/common/PageBanner";
 import React from "react";
-import WhyWorkWithUs_career from "./WhyWorkWithUs_career";
 
 const Career_banner = () => {
   return (
@@ -12,7 +11,6 @@ const Career_banner = () => {
         cta="Explore Open Positions"
         cta_link="#"
       />
-      <WhyWorkWithUs_career />
     </div>
   );
 };

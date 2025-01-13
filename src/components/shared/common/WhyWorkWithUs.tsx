@@ -23,7 +23,7 @@ const WhyWorkWithUs: React.FC<WhyWorkWithUsProps> = ({
   return (
     <section className="py-20">
       <ContentWidth>
-        <div className="container mx-auto space-y-10 px-6 md:px-12">
+        <div className="space-y-10">
           <Title title={sectionTitle} description={sectionDescription} />
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit, index) => (
@@ -39,7 +39,7 @@ const WhyWorkWithUs: React.FC<WhyWorkWithUsProps> = ({
                       className="w-16 h-16"
                     />
                   ) : (
-                    <i className={`${benefit.icon} text-4xl text-blue-500`}></i>
+                    <i className={`${benefit.icon} text-4xl text-brand-color`}></i>
                   )}
                 </div>
                 <h3 className="text-xl font-semibold mb-2 text-gray-700">
