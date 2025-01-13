@@ -1,5 +1,7 @@
 // components/WhyWorkWithUs.tsx
 import React from "react";
+import Title from "./Title";
+import ContentWidth from "../ContentWidth";
 
 interface Benefit {
   icon: string; // URL or className for the icon
@@ -9,40 +11,46 @@ interface Benefit {
 
 interface WhyWorkWithUsProps {
   benefits: Benefit[];
+  sectionTitle: string;
+  sectionDescription: string;
 }
 
-const WhyWorkWithUs: React.FC<WhyWorkWithUsProps> = ({ benefits }) => {
+const WhyWorkWithUs: React.FC<WhyWorkWithUsProps> = ({
+  benefits,
+  sectionTitle,
+  sectionDescription,
+}) => {
   return (
-    <section className="py-10 bg-gray-100">
-      <div className="container mx-auto px-6 md:px-12">
-        <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
-          Why Work With Us?
-        </h2>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {benefits.map((benefit, index) => (
-            <div
-              key={index}
-              className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300"
-            >
-              <div className="flex items-center justify-center mb-4">
-                {benefit.icon.startsWith("http") ? (
-                  <img
-                    src={benefit.icon}
-                    alt={benefit.title}
-                    className="w-16 h-16"
-                  />
-                ) : (
-                  <i className={`${benefit.icon} text-4xl text-blue-500`}></i>
-                )}
+    <section className="py-20">
+      <ContentWidth>
+        <div className="container mx-auto space-y-10 px-6 md:px-12">
+          <Title title={sectionTitle} description={sectionDescription} />
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {benefits.map((benefit, index) => (
+              <div
+                key={index}
+                className="p-6 border rounded-lg shadow-md hover:shadow-brand-color hover:shadow-lg transition duration-300"
+              >
+                <div className="flex items-center justify-center mb-4">
+                  {benefit.icon.startsWith("http") ? (
+                    <img
+                      src={benefit.icon}
+                      alt={benefit.title}
+                      className="w-16 h-16"
+                    />
+                  ) : (
+                    <i className={`${benefit.icon} text-4xl text-blue-500`}></i>
+                  )}
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-gray-700">
+                  {benefit.title}
+                </h3>
+                <p className="text-gray-600">{benefit.description}</p>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-700">
-                {benefit.title}
-              </h3>
-              <p className="text-gray-600">{benefit.description}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      </ContentWidth>
     </section>
   );
 };
