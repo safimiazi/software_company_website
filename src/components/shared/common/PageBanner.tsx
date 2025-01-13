@@ -4,6 +4,7 @@ interface BannerProps {
     backgroundImage: string;
     title: string;
     description: string;
+    cta?: string;
 }
 
 const PageBanner: React.FC<BannerProps> = ({ backgroundImage, title, description }) => {
