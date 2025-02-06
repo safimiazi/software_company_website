@@ -1,62 +1,102 @@
+"use client";
+
 import ContentWidth from "@/components/shared/ContentWidth";
 import Image from "next/image";
-import React from "react";
-import about from "../../../../public/about.png";
+import React, { useEffect, useState } from "react";
 import { PlusIcon } from "@/Icons";
+import axios from "axios";
+import {
+  get_home_page_about_data_api_url,
+  home_about_image_api,
+} from "@/Proxy";
+import Link from "next/link";
+
+interface IAboutData {
+  _id: string;
+  title: string;
+  description: string;
+  heading: string;
+  ctaLink: string;
+  ctaText: string;
+}
 
 const AboutUs = () => {
-  const aboutSectionData = {
-    heading: "About IT-Soft",
-    image: about,
-    title: "Accelerating Your Path to Business Excellence",
-    description:
-      "At IT-Soft, we specialize in crafting innovative solutions that streamline business growth. Our approach combines collaboration with smart strategies to deliver impactful results through diverse channels and technologies.",
+  const [aboutSectionData, aboutSectionDataSet] = useState<IAboutData[]>([]);
 
-    companyInfo: {
-      founderName: "Mohebulla Miazi",
-      designation: "CEO and Founder",
-    },
+  const getBannerData = async () => {
+    try {
+      const response = await axios.get(`${get_home_page_about_data_api_url}`); // Replace with your actual API endpoint
+      aboutSectionDataSet(response.data.data.result);
+    } catch (error) {
+      console.error("Error fetching banner data:", error);
+    }
   };
+
+  useEffect(() => {
+    getBannerData();
+  }, []);
+
+  const companyInfo = {
+    founderName: "Mohebulla Miazi",
+    designation: "CEO and Founder",
+  };
+
+  // const aboutSectionData = {
+  //   heading: "About IT-Soft",
+  //   image: about,
+  //   title: "Accelerating Your Path to Business Excellence",
+  //   description:
+  //     "At IT-Soft, we specialize in crafting innovative solutions that streamline business growth. Our approach combines collaboration with smart strategies to deliver impactful results through diverse channels and technologies.",
+
+  //   companyInfo: {
+  //     founderName: "Mohebulla Miazi",
+  //     designation: "CEO and Founder",
+  //   },
+  // };
 
   return (
     <section className="py-20">
       <ContentWidth>
         <div className="flex flex-col lg:flex-row gap-10 items-center justify-center">
           {/* Image */}
-          <div className="flex-shrink-0 w-full md:w-[600px]">
-            <Image
-              src={aboutSectionData.image}
+          <div className="flex-shrink-0 w-full md:h-[500px] md:w-[600px]">
+            <img
+              src={`${home_about_image_api}/${aboutSectionData[0]?._id}`}
               alt="About Us"
-              width={1000}
-              height={1000}
-              className="w-full "
+              className="w-full h-full object-cover"
             />
           </div>
 
           {/* Text Content */}
           <div className="text-center md:text-left space-y-4 md:space-y-6">
             <p className="text-brand-color text-xl font-bold tracking-wide uppercase">
-              {aboutSectionData.heading}
+              {aboutSectionData[0]?.heading}
             </p>
             <h2 className="text-title leading-snug">
-              The Fastest Way To Achieve Your Business{" "}
-              <span className="text-brand-color">Success</span>
+              {aboutSectionData[0]?.title}
             </h2>
             <p className="text-lg text-gray-600">
-              {aboutSectionData.description}
+              {aboutSectionData[0]?.description}
             </p>
 
-       
             <div className="flex flex-col md:flex-row items-center justify-start gap-10">
-              <button className="flex items-center justify-between bg-brand-color rounded-full p-3 gap-2 text-white">
-                Learn More
-                <span className="p-1 bg-white rounded-full text-brand-color">
-                  <PlusIcon />
-                </span>
-              </button>
+              <Link
+                href={
+                  aboutSectionData[0]?.ctaLink
+                    ? aboutSectionData[0]?.ctaLink
+                    : ""
+                }
+              >
+                <button className="flex items-center justify-between bg-brand-color rounded-full p-3 gap-2 text-white transition duration-300 ease-in-out hover:bg-brand-color-dark">
+                  {aboutSectionData[0]?.ctaText}
+                  <span className="p-1 bg-white rounded-full text-brand-color">
+                    <PlusIcon />
+                  </span>
+                </button>
+              </Link>
               <div className="flex items-center justify-start gap-4">
                 <Image
-                  src={aboutSectionData.image}
+                  src={`${home_about_image_api}/${aboutSectionData[0]?._id}`}
                   alt="Founder"
                   width={56}
                   height={56}
@@ -64,10 +104,10 @@ const AboutUs = () => {
                 />
                 <div className="flex flex-col">
                   <div className="text-xl font-semibold text-gray-800">
-                    {aboutSectionData.companyInfo.founderName}
+                    {companyInfo.founderName}
                   </div>
                   <div className="text-sm text-gray-600">
-                    {aboutSectionData.companyInfo.designation}
+                    {companyInfo.designation}
                   </div>
                 </div>
               </div>
