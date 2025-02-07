@@ -36,7 +36,7 @@ const Services = () => {
       },
     ],
   };
-  
+
 
   return (
     <section className="py-20 bg-black">
@@ -104,6 +104,7 @@ const Services = () => {
             </motion.div>
           ))}
         </div>
+        
       </ContentWidth>
     </section>
   );
