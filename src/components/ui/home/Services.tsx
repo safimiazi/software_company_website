@@ -5,6 +5,7 @@ import React from "react";
 import { motion } from "motion/react";
 import { Truncate } from "@/utility/CommonFunction";
 const Services = () => {
+  
   const serviceSectionData = {
     heading: "Services",
     title: "We Provide Any Business Problems Services",
