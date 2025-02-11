@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion"; // Import Framer Motion
 import "swiper/css";
@@ -17,93 +16,69 @@ import {
 } from "swiper/modules";
 import Link from "next/link";
 import { PlusIcon } from "@/Icons";
-import axios from "axios";
-import {
-  get_home_page_banner_data_api_url,
-  home_banner_image_api,
-} from "@/Proxy";
 
-interface BannerData {
-  _id: string;
-  title: string;
-  description: string;
-  ctaLink: string;
-  ctaText: string;
-}
 
 export default function App() {
-  const [bannerData, bannerDataSet] = useState<BannerData[]>([]);
 
-  const getBannerData = async () => {
-    try {
-      const response = await axios.get(`${get_home_page_banner_data_api_url}`); // Replace with your actual API endpoint
-      bannerDataSet(response.data.data.result);
-    } catch (error) {
-      console.error("Error fetching banner data:", error);
-    }
-  };
 
-  useEffect(() => {
-    getBannerData();
-  }, []);
 
-  // const slides = [
-  //   {
-  //     title: "Innovative Web Solutions",
-  //     description:
-  //       "We deliver cutting-edge web development services tailored to your business needs. Build a robust online presence with our expert team.",
-  //     image:
-  //       "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  //     button: {
-  //       text: "Learn More",
-  //       link: "/services/web-development",
-  //     },
-  //   },
-  //   {
-  //     title: "Mobile App Development",
-  //     description:
-  //       "Create user-friendly and scalable mobile applications for Android and iOS platforms with our skilled developers.",
-  //     image:
-  //       "https://images.pexels.com/photos/6078120/pexels-photo-6078120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  //     button: {
-  //       text: "Explore Apps",
-  //       link: "/services/mobile-app-development",
-  //     },
-  //   },
-  //   {
-  //     title: "Creative UI/UX Design",
-  //     description:
-  //       "Enhance user experiences with intuitive and visually appealing designs. Let us craft the perfect interface for your software.",
-  //     image:
-  //       "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  //     button: {
-  //       text: "See Our Work",
-  //       link: "/services/ui-ux-design",
-  //     },
-  //   },
-  //   {
-  //     title: "Boost Your Online Presence",
-  //     description:
-  //       "Our digital marketing strategies ensure your business reaches the right audience effectively and efficiently.",
-  //     image:
-  //       "https://images.pexels.com/photos/3184633/pexels-photo-3184633.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  //     button: {
-  //       text: "Start Marketing",
-  //       link: "/services/digital-marketing",
-  //     },
-  //   },
-  //   {
-  //     title: "SEO Optimization",
-  //     description:
-  //       "Improve your website's visibility on search engines with our proven SEO techniques. Get found by your customers easily.",
-  //     image:
-  //       "https://images.pexels.com/photos/571753/pexels-photo-571753.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  //     button: {
-  //       text: "Optimize Now",
-  //       link: "/services/seo-optimization",
-  //     },
-  //   },
-  // ];
+  const slides = [
+    {
+      title: "Innovative Web Solutions",
+      description:
+        "We deliver cutting-edge web development services tailored to your business needs. Build a robust online presence with our expert team.",
+      image:
+        "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      button: {
+        text: "Learn More",
+        link: "/services/web-development",
+      },
+    },
+    {
+      title: "Mobile App Development",
+      description:
+        "Create user-friendly and scalable mobile applications for Android and iOS platforms with our skilled developers.",
+      image:
+        "https://images.pexels.com/photos/6078120/pexels-photo-6078120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      button: {
+        text: "Explore Apps",
+        link: "/services/mobile-app-development",
+      },
+    },
+    {
+      title: "Creative UI/UX Design",
+      description:
+        "Enhance user experiences with intuitive and visually appealing designs. Let us craft the perfect interface for your software.",
+      image:
+        "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      button: {
+        text: "See Our Work",
+        link: "/services/ui-ux-design",
+      },
+    },
+    {
+      title: "Boost Your Online Presence",
+      description:
+        "Our digital marketing strategies ensure your business reaches the right audience effectively and efficiently.",
+      image:
+        "https://images.pexels.com/photos/3184633/pexels-photo-3184633.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      button: {
+        text: "Start Marketing",
+        link: "/services/digital-marketing",
+      },
+    },
+    {
+      title: "SEO Optimization",
+      description:
+        "Improve your website's visibility on search engines with our proven SEO techniques. Get found by your customers easily.",
+      image:
+        "https://images.pexels.com/photos/571753/pexels-photo-571753.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      button: {
+        text: "Optimize Now",
+        link: "/services/seo-optimization",
+      },
+    },
+  ];
 
   const animationVariants = {
     hidden: { opacity: 0, x: -100 },
@@ -117,15 +92,32 @@ export default function App() {
       modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
       pagination={{
         clickable: true,
+        renderBullet: (index, className) => {
+          const imageUrl = slides[index].image;
+          return `
+            <span
+              class="${className} custom-pagination"
+              style="
+                width: 50px;
+                height: 50px;
+                background-image: url('${imageUrl}');
+                background-size: cover;
+                background-position: center;
+                display: inline-block;
+                border-radius: 5%;
+              "
+            ></span>
+          `;
+        },
       }}
       scrollbar={{ draggable: true }}
       autoplay={{ delay: 9000 }}
     >
-      {bannerData.map((slide, index) => (
+      {slides.map((slide, index) => (
         <SwiperSlide key={index}>
           <div className="relative w-full h-[625px]">
             <Image
-              src={`${home_banner_image_api}/${slide._id}`}
+              src={slide.image}
               alt={slide.title}
               className="h-full w-full object-cover"
               width={1000}
@@ -145,10 +137,10 @@ export default function App() {
               >
                 {slide.description}
               </motion.div>
-              <Link href={slide.ctaLink}>
-                <button className="flex items-center justify-between bg-brand-color rounded-full p-3 gap-2 text-white transition duration-300 ease-in-out hover:bg-brand-color-dark">
-                  {slide.ctaText}
-                  <span className="p-1 bg-white rounded-full text-brand-color">
+              <Link href={slide.button.link}>
+                              <button className="flex items-center justify-between bg-brand-color rounded-full p-3 gap-2 text-white transition duration-300 ease-in-out hover:bg-brand-color-dark">
+                              {slide.button.text}
+                              <span className="p-1 bg-white rounded-full text-brand-color">
                     <PlusIcon />
                   </span>
                 </button>
