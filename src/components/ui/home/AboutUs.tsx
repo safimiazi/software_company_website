@@ -6,6 +6,7 @@ import { PlusIcon } from "@/Icons";
 import about from "../../../../public/about.png";
 
 import Link from "next/link";
+import { company_name } from "@/Proxy";
 
 const AboutUs = () => {
   const aboutSectionData = {
@@ -13,7 +14,7 @@ const AboutUs = () => {
     image: about,
     title: "Accelerating Your Path to Business Excellence",
     description:
-      "At IT-Soft, we specialize in crafting innovative solutions that streamline business growth. Our approach combines collaboration with smart strategies to deliver impactful results through diverse channels and technologies.",
+      `At ${company_name}, we specialize in crafting innovative solutions that streamline business growth. Our approach combines collaboration with smart strategies to deliver impactful results through diverse channels and technologies.`,
 
     companyInfo: {
       founderName: "Mohebulla Miazi",
