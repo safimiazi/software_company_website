@@ -4,7 +4,7 @@ import ContentWidth from "@/components/shared/ContentWidth";
 import Image from "next/image";
 import React from "react";
 import about from "../../../../public/about.png";
-import { CheckMark, PlusIcon } from "@/Icons";
+import {  PlusIcon } from "@/Icons";
 import { motion } from "framer-motion";
 
 const About_web_development = () => {

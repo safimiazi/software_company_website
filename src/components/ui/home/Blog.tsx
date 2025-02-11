@@ -1,5 +1,5 @@
 import ContentWidth from "@/components/shared/ContentWidth";
-import { MarketingIcon, PlusIcon, PostIcon, WebIcon } from "@/Icons";
+import { PlusIcon, PostIcon } from "@/Icons";
 import Image from "next/image";
 import React from "react";
 import BlogImage from "../../../../public/case1.png";

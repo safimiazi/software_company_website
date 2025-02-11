@@ -4,8 +4,6 @@ import { MarketingIcon, PlusIcon, WebIcon } from "@/Icons";
 import React from "react";
 import { motion } from "motion/react";
 import { Truncate } from "@/utility/CommonFunction";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css"; // Import Swiper styles
 import "swiper/css/pagination";
 

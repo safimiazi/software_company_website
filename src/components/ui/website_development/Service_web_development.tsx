@@ -2,9 +2,7 @@
 import Title from "@/components/shared/common/Title";
 import ContentWidth from "@/components/shared/ContentWidth";
 import { PhoneIcon } from "@/Icons";
-import Image from "next/image";
 import React from "react";
-import { motion } from "framer-motion"
 const Service_web_development = () => {
   const serviceData = {
     sectionTitle: "Web Development Services We Provide",

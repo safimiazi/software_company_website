@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 // components/WhyWorkWithUs.tsx
 import React from "react";
 import Title from "./Title";

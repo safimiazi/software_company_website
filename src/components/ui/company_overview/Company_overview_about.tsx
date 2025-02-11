@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import ContentWidth from "@/components/shared/ContentWidth";
 import React from "react";
 
