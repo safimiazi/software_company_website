@@ -1,0 +1,1 @@
+export const company_name = "Easy Soft Bangladesh"
