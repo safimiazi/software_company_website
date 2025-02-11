@@ -1,6 +1,9 @@
 import ContentWidth from "@/components/shared/ContentWidth";
 import { RightArrows } from "@/Icons";
 import React from "react";
+import web_development from "../../../../public/web_development.jpg";
+import app_development from "../../../../public/app_development.webp";
+import Image from "next/image";
 
 const Projects = () => {
   const projectData = Array(10).fill({ title: "safi" });
@@ -36,7 +39,13 @@ const Projects = () => {
                     key={index}
                     className="h-60 w-60 rounded-md border  project-container"
                   >
-                    {project.title}
+                    <Image
+                      src={app_development}
+                      alt=""
+                      className="h-full w-full object-cover"
+                      width={1000}
+                      height={1000}
+                    />{" "}
                     <div className=" hover-effect-div"></div>
                     <button className="flex project-details-button items-center justify-between  rounded-full p-3 gap-2 text-white transition duration-300 ease-in-out hover:bg-brand-color-dark">
                       View
@@ -63,7 +72,13 @@ const Projects = () => {
                     key={index}
                     className="h-60 w-60 rounded-md border project-container"
                   >
-                    {project.title}
+                    <Image
+                      src={web_development}
+                      alt=""
+                      className="h-full w-full object-cover"
+                      width={1000}
+                      height={1000}
+                    />
                     <div className=" hover-effect-div"></div>
                     <button className="flex project-details-button items-center justify-between  rounded-full p-3 gap-2 text-white transition duration-300 ease-in-out hover:bg-brand-color-dark">
                       View

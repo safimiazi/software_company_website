@@ -13,8 +13,7 @@ const AboutUs = () => {
     heading: `About ${company_name}`,
     image: about,
     title: "Accelerating Your Path to Business Excellence",
-    description:
-      `At ${company_name}, we specialize in crafting innovative solutions that streamline business growth. Our approach combines collaboration with smart strategies to deliver impactful results through diverse channels and technologies.`,
+    description: `At ${company_name}, we specialize in crafting innovative solutions that streamline business growth. Our approach combines collaboration with smart strategies to deliver impactful results through diverse channels and technologies.`,
 
     companyInfo: {
       founderName: "Mohebulla Miazi",
