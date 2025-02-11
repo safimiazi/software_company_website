@@ -49,7 +49,7 @@ const AboutUs = () => {
             </p>
 
             <div className="flex flex-col md:flex-row items-center justify-start gap-10">
-              <Link href={}>
+              <Link href={"/"}>
                 <button className="flex items-center justify-between bg-brand-color rounded-full p-3 gap-2 text-white transition duration-300 ease-in-out hover:bg-brand-color-dark">
                   Learn more
                   <span className="p-1 bg-white rounded-full text-brand-color">
