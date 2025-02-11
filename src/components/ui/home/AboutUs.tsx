@@ -7,13 +7,7 @@ import about from "../../../../public/about.png";
 
 import Link from "next/link";
 
-
 const AboutUs = () => {
-
-
-
-
-
   const aboutSectionData = {
     heading: "About IT-Soft",
     image: about,
@@ -33,7 +27,7 @@ const AboutUs = () => {
         <div className="flex flex-col lg:flex-row gap-10 items-center justify-center">
           {/* Image */}
           <div className="flex-shrink-0 w-full md:h-[500px] md:w-[600px]">
-          <Image
+            <Image
               src={aboutSectionData.image}
               alt="About Us"
               width={1000}
@@ -55,8 +49,7 @@ const AboutUs = () => {
             </p>
 
             <div className="flex flex-col md:flex-row items-center justify-start gap-10">
-              <Link href={}
-              >
+              <Link href={}>
                 <button className="flex items-center justify-between bg-brand-color rounded-full p-3 gap-2 text-white transition duration-300 ease-in-out hover:bg-brand-color-dark">
                   Learn more
                   <span className="p-1 bg-white rounded-full text-brand-color">
@@ -66,18 +59,18 @@ const AboutUs = () => {
               </Link>
               <div className="flex items-center justify-start gap-4">
                 <Image
-              src={aboutSectionData.image}
-              alt="Founder"
+                  src={aboutSectionData.image}
+                  alt="Founder"
                   width={56}
                   height={56}
                   className="w-14 h-14 border-2 border-brand-color rounded-full object-cover"
                 />
                 <div className="flex flex-col">
                   <div className="text-xl font-semibold text-gray-800">
-                  {aboutSectionData.companyInfo.founderName}
+                    {aboutSectionData.companyInfo.founderName}
                   </div>
                   <div className="text-sm text-gray-600">
-                  {aboutSectionData.companyInfo.designation}
+                    {aboutSectionData.companyInfo.designation}
                   </div>
                 </div>
               </div>
