@@ -7,6 +7,9 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import Image from "next/image";
+import web_development from "../../../../public/web_development.jpg";
+import app_development from "../../../../public/app_development.webp";
+import seo_optimization from "../../../../public/seo_optimization.jpg";
 import {
   A11y,
   Autoplay,
@@ -23,8 +26,7 @@ export default function App() {
       title: "Innovative Web Solutions",
       description:
         "We deliver cutting-edge web development services tailored to your business needs. Build a robust online presence with our expert team.",
-      image:
-        "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      image: web_development,
       button: {
         text: "Learn More",
         link: "/services/web-development",
@@ -34,24 +36,13 @@ export default function App() {
       title: "Mobile App Development",
       description:
         "Create user-friendly and scalable mobile applications for Android and iOS platforms with our skilled developers.",
-      image:
-        "https://images.pexels.com/photos/6078120/pexels-photo-6078120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      image: app_development,
       button: {
         text: "Explore Apps",
         link: "/services/mobile-app-development",
       },
     },
-    {
-      title: "Creative UI/UX Design",
-      description:
-        "Enhance user experiences with intuitive and visually appealing designs. Let us craft the perfect interface for your software.",
-      image:
-        "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      button: {
-        text: "See Our Work",
-        link: "/services/ui-ux-design",
-      },
-    },
+
     {
       title: "Boost Your Online Presence",
       description:
@@ -67,8 +58,7 @@ export default function App() {
       title: "SEO Optimization",
       description:
         "Improve your website's visibility on search engines with our proven SEO techniques. Get found by your customers easily.",
-      image:
-        "https://images.pexels.com/photos/571753/pexels-photo-571753.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      image: seo_optimization,
       button: {
         text: "Optimize Now",
         link: "/services/seo-optimization",
@@ -88,23 +78,6 @@ export default function App() {
       modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
       pagination={{
         clickable: true,
-        renderBullet: (index, className) => {
-          const imageUrl = slides[index].image;
-          return `
-            <span
-              class="${className} custom-pagination"
-              style="
-                width: 50px;
-                height: 50px;
-                background-image: url('${imageUrl}');
-                background-size: cover;
-                background-position: center;
-                display: inline-block;
-                border-radius: 5%;
-              "
-            ></span>
-          `;
-        },
       }}
       scrollbar={{ draggable: true }}
       autoplay={{ delay: 9000 }}
