@@ -17,11 +17,7 @@ import {
 import Link from "next/link";
 import { PlusIcon } from "@/Icons";
 
-
 export default function App() {
-
-
-
   const slides = [
     {
       title: "Innovative Web Solutions",
@@ -138,9 +134,9 @@ export default function App() {
                 {slide.description}
               </motion.div>
               <Link href={slide.button.link}>
-                              <button className="flex items-center justify-between bg-brand-color rounded-full p-3 gap-2 text-white transition duration-300 ease-in-out hover:bg-brand-color-dark">
-                              {slide.button.text}
-                              <span className="p-1 bg-white rounded-full text-brand-color">
+                <button className="flex items-center justify-between bg-brand-color rounded-full p-3 gap-2 text-white transition duration-300 ease-in-out hover:bg-brand-color-dark">
+                  {slide.button.text}
+                  <span className="p-1 bg-white rounded-full text-brand-color">
                     <PlusIcon />
                   </span>
                 </button>
