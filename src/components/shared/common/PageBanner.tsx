@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { PlusIcon } from "@/Icons";
 import Link from "next/link";
 import React from "react";
