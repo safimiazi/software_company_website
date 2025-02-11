@@ -10,7 +10,7 @@ import { company_name } from "@/Proxy";
 
 const AboutUs = () => {
   const aboutSectionData = {
-    heading: "About IT-Soft",
+    heading: `About ${company_name}`,
     image: about,
     title: "Accelerating Your Path to Business Excellence",
     description:
