@@ -1,5 +1,4 @@
 "use client"
-import React, { useEffect, useState } from "react";
 import { INavigationItems, NavigationItems } from "./NavigationItems";
 import Link from "next/link";
 import { NavbarArrowIcon } from "@/Icons";

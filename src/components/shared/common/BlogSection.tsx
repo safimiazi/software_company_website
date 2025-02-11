@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 // components/BlogSection.tsx
 import React from "react";
 import ContentWidth from "../ContentWidth";
